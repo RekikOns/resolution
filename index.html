@@ -37,14 +37,14 @@
 <body>
     <div class="contour">
         <h1><center>Calcul des racines de l'equation :</center></h1><br>
-        <h2 style="color: red;"><center> ax²+bx+c </center></h2>
-       <input type="number" id="coefA" placeholder="Entrez le coefficient a">
-        <label for="coefA">x² <strong>+</strong></label>
+        <h2 style="color: red;"><center> ax<sup>2</sup>+bx+c </center></h2>
+       <input type="text" id="coefA" placeholder="Entrez le coefficient a">
+        <label >x<sup>2</sup> <strong>+</strong></label>
         
-        <input type="number" id="coefB" placeholder="Entrez le coefficient b">
+        <input type="text" id="coefB" placeholder="Entrez le coefficient b">
 
-        <label for="coefB">x <b>+</b></label>
-        <input type="number" id="coefC" placeholder="Entrez le coefficient c">
+        <label >x <b>+</b></label>
+        <input type="text" id="coefC" placeholder="Entrez le coefficient c">
         
         
 
@@ -55,23 +55,23 @@
 
     <script>
         function calculerRacines() {
-            var a = parseFloat(document.getElementById('coefA').value);
-            var b = parseFloat(document.getElementById('coefB').value);
-            var c = parseFloat(document.getElementById('coefC').value);
+            let a = parseFloat(document.getElementById('coefA').value);
+            let b = parseFloat(document.getElementById('coefB').value);
+            let c = parseFloat(document.getElementById('coefC').value);
 
-            var delta = b * b - 4 * a * c;
+            let delta = b * b - 4 * a * c;
 
 
             if (delta > 0) {
-                var x1 = (-b + Math.sqrt(delta)) / (2 * a);
-                var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
 
                 document.getElementById('result').innerHTML = "Les solutions sont x1 = " + x1.toFixed(2) + " et x2 = " + x2.toFixed(2);
             } else if (delta === 0) {
                 var x = -b / (2 * a);
                 document.getElementById('result').innerHTML = "La solution double est x = " + x.toFixed(2);
             } else {
-                document.getElementById('result').innerHTML = "L'équation n'a pas de solutions";
+                document.getElementById('result').innerHTML = "L'&#233;quation n'a pas de solutions";
             }
         }
     </script>
